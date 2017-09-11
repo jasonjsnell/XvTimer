@@ -10,16 +10,12 @@ import Foundation
 
 public class XvTimer:NSObject {
     
-    
-    
-    
-    
-    //MARK: - VARS
-    
-    //MARK: APP ID
-    // called from app delegate at launch
-    
-    fileprivate var _appID:String = ""
+    //MARK: - INIT
+    //singleton code
+    public static let sharedInstance = XvTimer()
+    override init() {
+        if (debug){print("METRONOME: Init")}
+    }
     
     //MARK: MODE
     fileprivate var _foregroundMode:Bool = true
@@ -39,13 +35,11 @@ public class XvTimer:NSObject {
     fileprivate let debug:Bool = true
     
     
-    //MARK: - INIT
-    //singleton code
-    public static let sharedInstance = XvTimer()
-    override init() {
-        if (debug){print("METRONOME: Init")}
-    }
     
+    
+    //MARK: APP ID
+    // called from app delegate at launch
+    fileprivate var _appID:String = ""
     public func initTimer(withAppID:String) {
         _appID = withAppID
     }
