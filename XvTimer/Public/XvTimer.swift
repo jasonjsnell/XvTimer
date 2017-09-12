@@ -6,6 +6,12 @@
 //  Copyright © 2017 Jason J. Snell. All rights reserved.
 //
 
+/*
+ Start up timer by setting the foreground mode, becuase it needs to know what type of timer to use
+ Shutdown by calling shutdown
+ 
+ */
+
 import Foundation
 
 public class XvTimer:NSObject {
@@ -18,6 +24,7 @@ public class XvTimer:NSObject {
     }
     
     //MARK: MODE
+    
     fileprivate var _foregroundMode:Bool = true
     public var foregroundMode:Bool {
         get { return _foregroundMode }
@@ -123,6 +130,13 @@ public class XvTimer:NSObject {
         }
         
         dispatchSourceTimer?.resume()
+    }
+    
+    //MARK: SHUTDOWN
+    //called by app delegate during shutdown if bg mode is off
+    public func shutdown(){
+        if (debug){print("TIMER: Timer shutdown")}
+        _cancelAllTimers()
     }
     
     //cancel
