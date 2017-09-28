@@ -16,6 +16,8 @@ import Foundation
 
 public class XvTimer:NSObject {
     
+    fileprivate let debug:Bool = false
+    
     //MARK: - INIT
     //singleton code
     public static let sharedInstance = XvTimer()
@@ -39,7 +41,7 @@ public class XvTimer:NSObject {
     fileprivate var dispatchSourceTimer: DispatchSourceTimer? //background, fast, efficient
     fileprivate var displayLink:CADisplayLink? //foreground, good with graphics
     
-    fileprivate let debug:Bool = true
+    
     
     
     
