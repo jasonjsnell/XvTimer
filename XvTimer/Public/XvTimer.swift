@@ -54,7 +54,7 @@ public class XvTimer:NSObject {
     }
     
     //MARK: - TICK
-    internal func timerTick(){
+    @objc internal func timerTick(){
         Utils.postNotification(name: XvTimerConstants.kXvTimerTick, userInfo: nil)
     }
     
@@ -121,9 +121,9 @@ public class XvTimer:NSObject {
         
         dispatchSourceTimer = DispatchSource.makeTimerSource(queue: queue)
         
-        dispatchSourceTimer?.scheduleRepeating(
+        dispatchSourceTimer?.schedule(
             deadline: .now(),
-            interval: .milliseconds(10),
+            repeating: .milliseconds(10),
             leeway: .milliseconds(1))
         
         dispatchSourceTimer?.setEventHandler { [weak self] in // `[weak self]` only needed if you reference `self` in this closure and you want to prevent strong reference cycle
