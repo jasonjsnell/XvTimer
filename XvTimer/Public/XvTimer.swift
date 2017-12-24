@@ -16,7 +16,7 @@ import Foundation
 
 public class XvTimer:NSObject {
     
-    fileprivate let debug:Bool = false
+    fileprivate let debug:Bool = true
     
     //MARK: - INIT
     //singleton code
