@@ -5,7 +5,6 @@
 //  Created by Jason Snell on 9/5/17.
 //  Copyright © 2017 Jason J. Snell. All rights reserved.
 //
-
 /*
  Start up timer by setting the foreground mode, becuase it needs to know what type of timer to use
  Shutdown by calling shutdown
@@ -16,13 +15,13 @@ import Foundation
 
 public class XvTimer:NSObject {
     
-    fileprivate let debug:Bool = true
+    fileprivate let debug:Bool = false
     
     //MARK: - INIT
     //singleton code
     public static let sharedInstance = XvTimer()
     override init() {
-        if (debug){print("METRONOME: Init")}
+        if (debug){print("TIMER: Init")}
     }
     
     //MARK: MODE
@@ -151,6 +150,5 @@ public class XvTimer:NSObject {
         displayLink = nil
         
     }
-
+    
 }
-
