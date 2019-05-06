@@ -9,6 +9,7 @@ import Foundation
 
 public class XvTimerConstants {
     
-    public static let kXvTimerTick:String = "kXvTimerTick"
+    public static let kXvGuiClock:String = "kXvGuiClock"
+    public static let kXvAudioClock:String = "kXvAudioClock"
     
 }
